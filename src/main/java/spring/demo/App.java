@@ -22,8 +22,9 @@ public class App {
         
         System.out.println(user);
         
-        User user2=(User)applicationContext.getBean(User.class);
-        
-        System.out.println(user2);
+        //When only one bean is present of type User into container.
+//        User user2=(User)applicationContext.getBean(User.class);
+//        
+//        System.out.println(user2);
     }
 }
