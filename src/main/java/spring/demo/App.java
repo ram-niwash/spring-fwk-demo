@@ -14,7 +14,7 @@ import spring.demo.model.User;
 public class App {
 	
 	
-    public static void main( String[] args ){
+    public static void main(String[] args ){
     	
         ApplicationContext applicationContext=new AnnotationConfigApplicationContext(SpringCoreConfig.class);
     
@@ -22,11 +22,8 @@ public class App {
         
         System.out.println(user);
         
-        user=(User)applicationContext.getBean("userB");
+        User user2=(User)applicationContext.getBean(User.class);
         
-        System.out.println(user);
-        
-        
+        System.out.println(user2);
     }
-    
 }

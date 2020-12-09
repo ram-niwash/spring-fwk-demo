@@ -20,7 +20,7 @@ public class SpringCoreConfig {
 		return user;
 	}
 	
-	@Bean
+//	@Bean
 	public User userB() {
 		User user=new User("U0002", "XYZ", "XYZ", "Role2");
 		return user;
