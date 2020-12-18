@@ -2,8 +2,10 @@ package spring.demo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 import spring.demo.model.User;
+import spring.demo.service.UserService;
 
 /**
  * 
@@ -13,21 +15,27 @@ import spring.demo.model.User;
 @Configuration
 public class SpringCoreConfig {
 
-	@Bean
+	@Bean(name="userA")
+	@org.springframework.context.annotation.Scope("prototype")
 	public User userA() {
 		//Constructor field injection
-		User user=new User("U0001", "ABC", "ABC", "Role1");
+		User user=new User("U0001", "Ram Niwash", "Ram Niwash", "Super Admin");
 		return user;
 	}
 	
 	@Bean
 	public User userB() {
-		//Setter setter injection
+		//Setter field injection
 		User user=new User();
 		user.setUserID("U0002");
-		user.setUserName("XYZ");
-		user.setPassword("XYZ");
-		user.setRole("Role2");
+		user.setUserName("Parmod");
+		user.setPassword("Parmod");
+		user.setRole("Admin");
 		return user;
+	}
+	
+	@Bean
+	public UserService userService() {
+		return new UserService();
 	}
 }

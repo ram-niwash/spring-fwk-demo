@@ -14,8 +14,9 @@ import spring.demo.model.User;
 public class App {
 	
 	
-    public static void main(String[] args ){
+    public static void main(String[] args ) throws Exception{
     	
+        @SuppressWarnings("resource")
         ApplicationContext applicationContext=new AnnotationConfigApplicationContext(SpringCoreConfig.class);
     
         User user=(User)applicationContext.getBean("userA");
@@ -26,5 +27,6 @@ public class App {
 //        User user2=(User)applicationContext.getBean(User.class);
 //        
 //        System.out.println(user2);
+        
     }
 }
